@@ -14,18 +14,19 @@ spec:
     spec:
       containers:
       - name: web
-        image: <your-dockerhub-username>/web-app:1.0.0
+        image: antonkrasn/course-work:1.0.0
         ports:
         - containerPort: 8000
         livenessProbe:
           httpGet:
-            path: /hello.html
+            path: /index.html
             port: 8000
           initialDelaySeconds: 5
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /hello.html
+            path: /index.html
             port: 8000
           initialDelaySeconds: 2
           periodSeconds: 5
+
